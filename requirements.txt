@@ -1,0 +1,63 @@
+# ATA Management — ingestion & data engineering (basic set)
+# Install:  pip install -r requirements.txt
+
+# --- Core data processing ---
+pandas>=2.2,<3.0
+numpy>=1.26,<3.0
+pyarrow>=16.0          # Parquet / Arrow interchange
+fastavro>=1.9          # Avro read/write
+polars>=1.0            # fast dataframe alternative for heavy transforms
+
+# --- HTTP / API ingestion ---
+requests>=2.31,<3.0
+httpx>=0.27            # sync + async HTTP client
+aiohttp>=3.9           # async bulk fetching
+tenacity>=8.3          # retry with backoff for flaky sources
+
+# --- Databases / storage ---
+SQLAlchemy>=2.0,<3.0   # ORM / engine abstraction
+psycopg2-binary>=2.9   # PostgreSQL
+pymysql>=1.1           # MySQL
+aiosqlite>=0.20        # SQLite (local dev / small jobs)
+pymongo>=4.7           # MongoDB
+elasticsearch>=8.12,<9.0  # Elasticsearch
+redis>=5.0             # Redis client (caching / queue)
+
+# --- Message brokers / streams ---
+confluent-kafka>=2.3   # Kafka producer/consumer
+pika>=1.3              # RabbitMQ
+aiokafka>=0.11         # async Kafka
+
+# --- Cloud / object storage ---
+boto3>=1.34            # S3 & AWS services
+google-cloud-storage>=2.14
+google-cloud-bigquery>=3.20
+azure-storage-blob>=12.19
+
+# --- Orchestration / scheduling ---
+APScheduler>=3.10      # in-process scheduler
+celery>=5.4            # task queue (pairs with redis broker)
+prefect>=2.14          # workflow orchestration (pipelining)
+
+# --- Validation / config ---
+pydantic>=2.7          # schema validation & typed config
+python-dotenv>=1.0     # .env secrets
+orjson>=3.10           # fast JSON parsing
+
+# --- Logging / observability ---
+loguru>=0.7            # structured logging
+structlog>=24.1
+prometheus-client>=0.20  # basic metrics
+
+# --- Utilities ---
+click>=8.1             # CLI entrypoints
+tqdm>=4.66             # progress bars
+jsonpath-ng>=1.6       # JSON extraction for API payloads
+python-dateutil>=2.9   # date parsing
+pytz>=2024.1
+
+# --- Testing (optional, dev) ---
+pytest>=8.0
+pytest-cov>=5.0
+factory-boy>=3.3       # test data factories
+responses>=0.25        # HTTP mocking for API ingestion tests
